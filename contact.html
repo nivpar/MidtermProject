@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Boomers Tutors - Contact Us</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+  		<meta name="description" content="tutoring services">
+  		<meta name="keywords" content="tutoring, contact"> 
+		<link rel="stylesheet" href="MidtermProject.css">
+		<style> 
+			body {text-align:center;}
+			h1 {color:#39914f;}
+			h2 {color:#39914f;}
+			.button {background-color:#39914f; color:#fff;}
+		</style>
+	</head>
+	<body>
+		<script
+  			src="http://code.jquery.com/jquery-3.5.1.js"
+  			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  			crossorigin="anonymous">
+  		</script>
+		<header>
+			<div class="top">
+				<h1><a href="index.html"><img src="boomerstutors.png" alt="logo" width="100" class="center"></a><span class="boomerstutors" style = "vertical-align: super">Boomers Tutors</span></h1>
+			</div>
+			<div class="banner">
+				<img src="midtermbanner.jpg" alt="logo" class="center" height="200px" width="100%">
+			</div>
+		</header>
+		<nav>
+	    	<ul class="nav">
+			   <li><a href="index.html">Home</a></li>
+			   <li><a href="TutoringServices.html">Services</a></li>
+			   <li><a href="Testimonials.html">Testimonials</a></li>
+			   <li><a href="pricing.html">Pricing</a></li>
+			   <li><a href="Careers.html">Careers</a></li>
+			   <li><a href="contact.html">Contact</a></li>
+	    	</ul>
+		</nav>
+		<hr>
+		<h1>Contact Us</h1>
+		<img src="happystudents.jpg" alt="Contact Photo" width="500" class="center">
+		<h2>Phone</h2>
+		<p>555-555-5555</p>
+		<h2>Address</h2>
+		<p>
+			389 Boston Ave <br/>
+			Medford, MA <br/>
+			02155
+		</p>
+		<h2>Email</h2>
+		<h3>Fill out the following form to send us an email!</h3>
+		<form id="form1">
+  			<label for="name">Name:</label><br>
+  			<input type="text" id="name"><br/><br/>
+  			<label for="email">Email Address:</label><br>
+  			<input type="text" id="email"><br/><br/>
+  			<label for="text">Message:</label><br>
+  			<input type="text" id="text"><br/><br/>
+  			<input type="submit" value="Submit" class="button" onclick="validate()">
+		</form>
+		<script>
+			function validate() {
+				var name = document.getElementById("name").value;
+				var email = document.getElementById("email").value;
+				var text = document.getElementById("text").value;
+				if (name == "" || email == "" || text == "") {
+					alert("At least one field was empty. Could not submit.");
+				}
+				else if (validate_email(email) == false){
+					alert("Invalid email. Could not submit.")
+				}
+				else {
+					alert("Your email has been sent! You will be hearing from us shortly.");
+				}
+			}
+			function validate_email(email) {
+				var ind = email.indexOf("@");
+				if (ind == -1) {
+					return false;
+				}
+				else {
+					var domain = email.substring(ind + 1);
+					var period_ind = domain.indexOf(".");
+					if (period_ind == -1) {
+						return false;
+					}
+				}
+				return true;
+			}
+		</script>
+		<hr>
+	</body>
+	<footer>
+		<a href="pricing.html" style="color:#000000">
+			<div class="request">
+			<p>REQUEST A TUTOR</p>
+			</div>
+		</a>
+		<p>Boomers Tutors 2020 389 Boston Ave. Medford, MA 02155</p>
+	</footer>
+</html>

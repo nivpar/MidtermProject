@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="MidtermProject.css">
+<style>
+	body {text-align:center;}
+	h2 {color: #39914F; font-size: 35px}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="description" content="tutoring services">
+<meta name="keywords" content="tutoring, pricing, find a tutor">
+<title> Boomer Tutors - Pricing </title>
+</head>
+<body>
+	<script
+  		src="http://code.jquery.com/jquery-3.5.1.js"
+  		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  		crossorigin="anonymous">
+  	</script>
+  	<script>
+  		$(document).ready(function(){
+    		$("h3").hide();
+		});
+  	</script>
+	<header>
+			<div class="top">
+				<h1><a href="index.html"><img src="boomerstutors.png" alt="logo" width="100" class="center"></a><span class="boomerstutors" style = "vertical-align: super">Boomers Tutors</span></h1>
+			</div>
+			<div class="banner">
+				<img src="midtermbanner.jpg" alt="logo" class="center" height="200px" width="100%">
+			</div>
+	</header>
+		<nav>
+		   	<ul class="nav">
+			   <li><a href="index.html">Home</a></li>
+			   <li><a href="TutoringServices.html">Services</a></li>
+			   <li><a href="Testimonials.html">Testimonials</a></li>
+			   <li><a href="pricing.html">Pricing</a></li>
+			   <li><a href="Careers.html">Careers</a></li>
+			   <li><a href="contact.html">Contact</a></li>
+		   	</ul>
+		</nav>
+		<hr>
+	<header>
+		<h2> Pricing </h2>
+		<h2> Average Pricing </h2>
+	</header>
+<p>
+SAT/ACT Tutoring: between 50 and 70$/hr. <br>
+School Subject-Specific Tutoring: between 10 and 40$/hr 
+</p>
+<header>
+	<h2> Provide Info for a more Exact Quote</h2>
+</header>
+<form>
+	First Name: <br> <input type="text" id = "first">  <br> Last Name: <br> <input type="text" id="last"> <br/>
+	Email: <br> <input type="text" id = "email"> <br/>
+	Phone: <br> <input type="text" id = "phone"> <br/>
+	Location: <br> <input type="text" id = "location"> <br/>
+	Subject of Interest: <br><input type = "text" id = "subject"> <br />
+	Grade of Student: <br><input type="text" id = "grade"> <br />
+	Average GPA of Student: <br><input type="text" id = "GPA"> <br />
+	<input type = "button" value = "Submit Form" onclick = "submitForm()" id = "submit" class = "button1"> <br/> <br/>
+	Confirmation: <br/> <br/>
+	<span id = "confirmation"> </span> <br/> <br/>
+	<input type = "button" value = "Confirm" onclick = "finish()" id = "confirm" disabled> <input type = "button" value = "No" onclick = "clearForm()" id = "no" disabled>
+</form>
+<header> 
+	<h3> Estimate of Quote: </h3>
+</header>
+	<p> <span id = "quote"> </span> </p>
+</body>
+<script>
+	function submitForm() {
+		var entries = [];
+		document.getElementById("confirm").disabled = false;
+		document.getElementById("no").disabled = false;
+		var first = document.getElementById('first').value;
+		var last = document.getElementById('last').value;
+		var email = document.getElementById('email').value;
+		var phone = document.getElementById('phone').value;
+		var location = document.getElementById('location').value;
+		entries.push(document.getElementById('subject').value);
+		var grade = document.getElementById('grade').value;
+		entries.push(document.getElementById('GPA').value);
+		document.getElementById('confirmation').innerHTML = "Name: " + first + " " + last + "<br>" + "Contact Info: Email: " + email + " Phone: " + phone + " Location: " + location + ".<br>" + "Subject of Interest: " + entries[0] + "<br>Grade: " + grade + "<br>GPA: " + entries[1];
+	}
+	function finish() {
+		var subject = document.getElementById('subject').value;
+		var gpa = document.getElementById('GPA').value;
+		var price;
+		if (subject === "ACT" || subject === "SAT") {
+			if (gpa < 2) price = 70;
+			else if (gpa >= 2 && gpa <3) price = 60;
+			else if (gpa >= 3) price = 50;
+		}else {
+			if (gpa < 2) price = 40;
+			else if (gpa >= 2 && gpa <3) price = 25;
+			else if (gpa >= 3) price = 10;
+		}
+		document.getElementById('quote').innerHTML = "This is your estimated quote: $" + price;
+		$(document).ready(function(){
+    		$("h3").show();
+		});
+	}
+	function clearForm() {
+		location.reload();
+	}
+</script>
+	<hr>
+	<footer>
+		<a href="pricing.html" style="color:#000000">
+			<div class="request">
+			<p>REQUEST A TUTOR</p>
+			</div>
+		</a>
+		<p>Boomers Tutors 2020 389 Boston Ave. Medford, MA 02155</p>
+	</footer>
+</html>

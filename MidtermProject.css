@@ -1,0 +1,20 @@
+
+header{font-family: gill sans; color: #39914F; text-align: center}
+
+body{background-color: #FFFDF3; font-family: gill sans; color:#000000}
+
+.nav li {display: inline-block; font-size: 20px; padding: 5px 20px 5px 20px; box-sizing:border-box; border: 1px solid #fff; color: #000; text-align: center}
+
+.nav li {border: 1px solid #333; color: #fff; background-color: #39914F; text-align: center}
+
+.nav li a {text-decoration: none; color: inherit; text-align: center}
+
+header {font-size: 30px;}
+
+.request {
+	height: 50px; font-size: 24px; font-weight: bold; display: inline-block; border-radius: 25px; background: #FDD588; padding: 0.1em 0.2em 0.1em 0.2em; vertical-align: middle; line-height: 0px; margin-top: 30px; margin-bottom: 10px;
+}
+
+.top {margin-top: -20px}
+
+.banner {margin-top: -45px}
